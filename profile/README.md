@@ -1,7 +1,4 @@
-![image](https://github.com/user-attachments/assets/3e487099-376e-4871-99f2-1dafbcdb633f)# 대현.com
 ## [대현닷컴 - 마피아42 편리기능 사이트]([https://.me/](http://xn--vk1b177d.com/))
-
-[![대현닷컴 배너](https://github.com/user-attachments/assets/dad28737-0fe1-496c-a7cb-ac28063083bf)](http://xn--vk1b177d.com/)
 
 ## Overview
 대현닷컴은 마피아42 편리기능 사이트입니다
@@ -26,3 +23,5 @@
 - 출석보상 계산기 기능
 - 권엽 계산기 기능
 - 환률 계산기 기능
+
+[![대현닷컴 배너](https://github.com/user-attachments/assets/dad28737-0fe1-496c-a7cb-ac28063083bf)](http://xn--vk1b177d.com/)
