@@ -11,7 +11,7 @@
 <br />
 <br />
 
-![대현닷컴](https://github.com/user-attachments/assets/8ac0194a-b36e-4767-bb85-e0af2caf769b)
+![대현닷컴 서비스 화면](./assets/daehyun-home.png)
 
 <br />
 
