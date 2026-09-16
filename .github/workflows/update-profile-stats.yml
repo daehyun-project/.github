@@ -37,7 +37,7 @@ jobs:
           text = path.read_text(encoding="utf-8")
           formatted_count = f"{int(os.environ['USER_COUNT']):,}"
           updated, replacements = re.subn(
-              r"(<!-- total-user-count:start -->)\d+(<!-- total-user-count:end -->)",
+              r"(<!-- total-user-count:start -->)[\d,]+(<!-- total-user-count:end -->)",
               rf"\g<1>{formatted_count}\g<2>",
               text,
           )
