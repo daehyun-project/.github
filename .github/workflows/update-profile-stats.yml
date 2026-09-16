@@ -1,0 +1,59 @@
+name: Update Profile Stats
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-user-count:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout profile repository
+        uses: actions/checkout@v4
+
+      - name: Fetch current user count
+        id: stats
+        shell: bash
+        run: |
+          payload="$(curl --fail --silent --show-error --retry 3 \
+            https://api.xn--vk1b177d.com/stats/summary)"
+          user_count="$(jq -er '.data.totalUserCount | numbers' <<< "$payload")"
+          echo "user_count=$user_count" >> "$GITHUB_OUTPUT"
+
+      - name: Update README
+        env:
+          USER_COUNT: ${{ steps.stats.outputs.user_count }}
+        run: |
+          python3 - <<'PY'
+          import os
+          import re
+          from pathlib import Path
+
+          path = Path("profile/README.md")
+          text = path.read_text(encoding="utf-8")
+          formatted_count = f"{int(os.environ['USER_COUNT']):,}"
+          updated, replacements = re.subn(
+              r"(<!-- total-user-count:start -->)\d+(<!-- total-user-count:end -->)",
+              rf"\g<1>{formatted_count}\g<2>",
+              text,
+          )
+          if replacements != 1:
+              raise SystemExit("Expected exactly one user-count marker in profile/README.md")
+          path.write_text(updated, encoding="utf-8")
+          PY
+
+      - name: Commit updated user count
+        shell: bash
+        run: |
+          if git diff --quiet -- profile/README.md; then
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add profile/README.md
+          git commit -m "chore: update profile user count"
+          git push
