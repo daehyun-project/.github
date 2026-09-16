@@ -2,7 +2,7 @@
 
 # 대현닷컴
 
-### 마피아42를 더 편리하게 즐기기 위한 실 운영 서비스
+### 마피아42를 더 편리하게 즐기기 위한 서드파티 서비스
 
 <img src="https://img.shields.io/badge/Service-Live-111827?style=flat-square" alt="실 운영 서비스">
 <img src="https://img.shields.io/badge/Operating-2020.09--Now-16a34a?style=flat-square" alt="운영 기간">
