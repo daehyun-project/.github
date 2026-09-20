@@ -32,7 +32,7 @@
 | 서비스 | 마피아42 편의기능 서비스 |
 | 운영 기간 | 2020.09 - 현재 |
 | 운영 상태 | 실 운영 서비스 |
-| 가입자 | <!-- total-user-count:start -->3,135<!-- total-user-count:end --> |
+| 가입자 | <!-- total-user-count:start -->3,136<!-- total-user-count:end --> |
 | 비즈니스 | 광고 기반 수익 모델, 손익분기점 초과 |
 | 플랫폼 | 웹, Android 앱 기반 |
 
